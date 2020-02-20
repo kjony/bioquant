@@ -1,0 +1,38 @@
+{% extends "header.html" %}
+{% block head %}
+{{ super() }}
+<div class="container mt-5">
+	<div class="row ">
+		<div class="col">
+			<hr>
+			<h2>Synopsis:</h2>
+			<h4>Bioquant is a (currently undeployed) experimental graphic user intefrace, for the Biopython computational biology library.<br> Its aim is to facilitate usage of computational molecular biology tools for Life Science researchers.<br>
+			Currnet app functionality consists of parsing and rudimentri genomic analysis of Fasta records.<br><br>
+			<h2>Structure:</h2>
+			<h4>Bioquant is powered by Python, the Flask web framework and the Bootstrap front-end library.</h4><hr>
+		</div>
+	</div>
+	<br><br><br>
+	<div class="row text-center">
+		<div class="col-sm">
+			<title>Upload new File</title>
+    		<h2>Please upload your Fasta file:</h2>
+    		<form method=post enctype=multipart/form-data>
+      			<input type=file name=file>
+      			<input type=submit value=Upload>
+    		</form>
+    		<br>
+    		{% with messages = get_flashed_messages() %}
+  				{% if messages %}
+    				<ul id=flashes>
+    				{% for message in messages %}
+      				<li><h4><b>{{ message }}</b></h4></li>
+    				{% endfor %}
+    				</ul>
+  				{% endif %}
+			{% endwith %}
+		</div>
+	</div>
+</div>
+{% endblock %}
+

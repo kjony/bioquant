@@ -1,0 +1,54 @@
+body {
+  font-family: 'Manjari';
+  color:#666666; 
+  overflow-x: hidden;"
+}
+h1 {
+  color: #1E90FF
+}
+hr {
+  height: 10px;
+}
+#header {
+		margin-bottom: 0px;
+}
+#search {
+	margin-bottom: 0px;
+    margin-top: 50px;
+}
+#types {
+	margin: auto;
+	margin-bottom: 0px;
+    margin-top: 10px;
+    width: 100%;
+    height: 450px;
+    border: 3px solid blue;
+    border-radius: 5px;
+    padding: 5px;
+    overflow-y: scroll;
+}
+#sequence {
+	margin: auto;
+	margin-bottom: 0px;
+    margin-top: 30px;
+    height: 310px;
+    border: 3px solid blue;
+    border-radius: 5px;
+    padding: 20px;
+    overflow-y: scroll;
+}
+#button {
+	margin-bottom: 50px;
+    margin-top: 30px;
+}
+#bar {
+	margin: auto;
+	text-align: center;
+	margin-bottom: 0px;
+    margin-top: 20px;
+    width: 100%;
+}
+#data {
+	margin-bottom: 6px;
+    margin-top: 30px;    
+}

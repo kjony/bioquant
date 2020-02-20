@@ -1,0 +1,49 @@
+{% extends "header.html" %}
+{% block head %}
+{{ super() }}
+<div class="container mt-5">
+	<div class="row justify-content-center">
+		<div class="col" id="info" text align="center">
+		<h3>Your Fasta file contains records of <b>{{ length }}</b> organisms.<br>
+		Click a record to begin analysis, or search the file by entering a full Fasta ID.</h3>
+		</div>
+	</div>
+	<div class="row justify-content-center" id="info">
+		<div class="col">
+			<form method="POST" action="/parse" id="info" >
+				<input class="form-control" id="search" type="text" placeholder="Search record by full ID" name="ID">
+         		<input type = "submit" value = "search">
+      		</form>
+      		{% if phase == 'display' %}
+				<ul id="types">
+				{% for des in descriptions %}
+					<li><a href="{{ url_for('analyze', des=des, choice=0) }}"><h4>{{ des }}</h4></a></li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+			{% if phase == 'found' %}
+				<ul id="types">
+					<li><a href="{{ url_for('analyze', des=des, choice=0) }}"><h4>{{ des }}</h4></a></li>
+				</ul>
+			{% endif %}
+			{% if phase == 'notFound' %}
+				<ul id="types">
+				{% for des in descriptions %}
+					<li><a href="{{ url_for('analyze', des=des, choice=0) }}"><h4>{{ des }}</h4></a></li>
+				{% endfor %}			
+				</ul>
+				<br>
+				{% with messages = get_flashed_messages() %}
+  					{% if messages %}
+    					<ul id=flashes>
+    					{% for message in messages %}
+      						<li><h4><b>{{ message }}</b></h4></li>
+    					{% endfor %}
+    					</ul>
+  					{% endif %}
+				{% endwith %}
+			{% endif %}
+		</div>
+	</div>
+</div>
+{% endblock %}

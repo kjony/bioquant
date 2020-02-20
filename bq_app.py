@@ -1,11 +1,13 @@
 #!/usr/local/bin/python3
 # ============================================================================
-# Bioquant is a (currently undeployed) experimental graphic user intefrace,
-# for the Biopython computational biology library.<br> Its aim is to
-# facilitate usage of computational molecular biology tools for Life Science
-# researchers. Currnet app functionality consists of parsing and rudimentri
-# genomic analysis of Fasta records. Bioquant is powered by Python, the Flask
-# web framework and the Bootstrap front-end library.
+# Bioquant is an (undeployed) experimental graphic user intefrace, for the
+# Biopython computational biology library.
+# Its aim is to facilitate usage of computational molecular biology tools for
+# Life Science researchers.
+# Currnet app functionality consists of basic parsing and rudimentri genomic
+# analysis of Fasta records. 
+#Bioquant is powered by Python, the Flask web framework and the Bootstrap
+# front-end library.
 # Code is PEP8 compliant.
 # ============================================================================
 

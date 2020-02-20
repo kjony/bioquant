@@ -1,0 +1,44 @@
+{% extends "header.html" %}
+{% block head %}
+{{ super() }}
+<div class="container mt-5">
+	<div class="row justify-content-md-center">
+		<div class="col" text align="center">
+			<h4><b>{{ des }}</b></h4>
+		</div>
+	</div>
+	<div class="row justify-content-md-center">
+		<div class="col" id="sequence">
+		{% for nuc in sequence %}
+			<b>{{ nuc }}</b>
+		{% endfor %}
+		</div>
+	</div>
+	<div class="row justify-content-md-center" id="bar">
+		<div class="col">
+		<a class="btn btn-outline-dark btn-lg" id="button" href="{{ url_for('analyze', des=des, choice='gc')}}">GC content</a>
+  		</div>
+  		<div class="col">
+		<a class="btn btn-outline-dark btn-lg" id="button" href="{{ url_for('analyze', des=des, choice='translate')}}">Amino acids</a>
+  		</div>
+	</div>
+	<div class="row justify-content-md-center">
+		{% if choice == 'gc' %}
+			<div class="col" id="data" text align="center">
+			<hr>
+			<h3>GC content for this sequence is <b>{{ gc }}%</b></h3>
+			<hr>
+			</div>
+		{% endif %}
+		{% if choice == 'translate' %}
+			<div class="col" id="data" text align="center">
+			<hr>
+			{% for acid in protein %}
+				<b>{{ acid }}</b>
+			{% endfor %}
+			<hr>
+			</div>
+		{% endif %}
+	</div>
+</div> 
+{% endblock %}
